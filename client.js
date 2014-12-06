@@ -36,6 +36,10 @@ Meteor.connectWith = function (service, options, callback) {
 		options = null;
 	}
 	var connectCredentialRequestCompleteCallback = Accounts.oauth.connectCredentialRequestCompleteHandler(callback);
+	if (service = 'Foursquare') {
+		Foursquare.requestCredential(options, connectCredentialRequestCompleteCallback);
+		return;
+	}
 	var Service = Package[service][makePascalCased(service)];
 	Service.requestCredential(options, connectCredentialRequestCompleteCallback);
 };
