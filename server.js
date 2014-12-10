@@ -69,6 +69,15 @@ var addOauthService = function (user, options) {
 	var serviceKey = "services." + serviceName;
 	modifier.$set[serviceKey] = serviceData;
 	Meteor.users.update(user._id, modifier);
+	
+	// add service to profile
+	var modifier = {
+		$set: {}
+	};
+	var serviceKey = "profile." + serviceName;
+	modifier.$set[serviceKey] = 1;
+	console.log('user update modifier', modifier);
+	Meteor.users.update(user._id, modifier);
 };
 
 
