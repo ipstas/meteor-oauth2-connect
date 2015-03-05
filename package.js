@@ -1,12 +1,12 @@
 Package.describe({
-	name: "ipstas:connect-with",
-	summary: "Connect other oauth accounts with an existing one",
-	version: "0.1.3",
-	git: "https://github.com/mondora/mondora-connect-with.git"
+	name: "ipstas:oauth2-connect",
+	summary: "Connect other oauth accounts with an existing one, forked from mondora:connect-with, added Fsqr",
+	version: "0.0.1",
+	git: "https://github.com/ipstas/meteor-oauth2-connect.git"
 });
 
 Package.onUse(function (api) {
-	api.versionsFrom("METEOR@0.9.0");
+	api.versionsFrom("METEOR@1.0");
 	// Server dependencies
 	api.use("oauth", "server");
 	api.use("oauth-encryption", "server", {weak: true});
